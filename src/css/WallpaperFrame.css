@@ -1,0 +1,7 @@
+.wallpaper-frame {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}

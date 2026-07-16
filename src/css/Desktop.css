@@ -1,0 +1,11 @@
+.desktop {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: strech;
+    padding: 12px;
+    gap: 12px;
+    box-sizing: border-box;
+    position: relative;
+}
