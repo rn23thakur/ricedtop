@@ -2,7 +2,7 @@ import "../css/Taskbar.css";
 
 function Taskbar() {
     return (
-        <div className="taskbar-strip">taskbar</div>
+        <div className="taskbar-strip"></div>
     )
 }
 
