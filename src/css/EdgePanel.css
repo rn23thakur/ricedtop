@@ -1,46 +1,58 @@
 .edge-panel {
     position: absolute;
-    background: #11111b;
-    z-index: 100; /* below triggers (100), above wallpaper */
-    transition: transform 0.3s ease;
-    border: 2px solid greenyellow;
+    --panel-opacity: 95%;
+    background: color-mix(in srgb, var(--desktop-bg) var(--panel-opacity),transparent);
+    z-index: 90;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* TOP: slides down from above the viewport */
 .edge-panel-status-bar {
     top: 0;
-    left: 50%;
+    left: 0;
+    right: 0;
     width: 60%;
-    height: 180px;
-    transform: translate(-50%, -100%); /* hidden above screen */
-    border-radius: 0 0 20px 20px;
-}
-.edge-panel-status-bar.edge-panel-open {
-    transform: translate(-50%, 0);
+    margin: 0 auto; /* centers a fixed-width box between left:0 and right:0 */
+    border-radius: 0 0 24px 24px;
 }
 
-/* BOTTOM: slides up from below the viewport */
+.edge-panel-status-bar::before,
+.edge-panel-status-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(
+            circle at bottom left,
+            transparent 40px,
+            color-mix(in srgb, var(--desktop-bg) var(--panel-opacity),transparent) 40px
+        );
+}
+
+.edge-panel-status-bar::before {
+    left: -40px;
+}
+
+.edge-panel-status-bar::after {
+    right: -40px;
+    transform: scaleX(-1); /* mirror the same gradient for the right side */
+}
 .edge-panel-launcher {
     bottom: 0;
-    left: 50%;
+    left: 0;
+    right: 0;
     width: 60%;
-    height: 300px;
-    transform: translate(-50%, 100%); /* hidden below screen */
-    border-radius: 20px 20px 0 0;
-}
-.edge-panel-launcher.edge-panel-open {
-    transform: translate(-50%, 0);
+    margin: 0 auto;
+    border-radius: 24px 24px 0 0;
 }
 
-/* RIGHT: slides in from off-screen right */
 .edge-panel-volume {
     right: 0;
-    top: 50%;
-    width: 260px;
+    top: 0;
+    bottom: 0;
     height: 400px;
-    transform: translate(100%, -50%); /* hidden off-screen right */
-    border-radius: 20px 0 0 20px;
-}
-.edge-panel-volume.edge-panel-open {
-    transform: translate(0, -50%);
+    margin: auto 0; /* vertical centering, same trick on the other axis */
+    width: 260px;
+    border-radius: 24px 0 0 24px;
 }
