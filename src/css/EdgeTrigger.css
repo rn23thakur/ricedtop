@@ -1,36 +1,5 @@
 .edge-trigger {
     position: absolute;
     z-index: 100;
-}
-
-.edge-trigger-status-bar {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40%; 
-    height: 20px;
-}
-
-.edge-trigger-launcher {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40%;
-    height: 20px;
-}
-
-.edge-trigger-left {
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 60%;
-    width: 20px;
-}
-
-.edge-trigger-volume {
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 40%;
-    width: 20px;
+    border: 2px solid red;
 }
