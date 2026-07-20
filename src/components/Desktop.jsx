@@ -3,14 +3,14 @@ import Taskbar from "./Taskbar";
 import WallpaperFrame from "./WallpaperFrame";
 import StatusBar from "./features/StatusBar";
 import VolumeBar from "./features/VolumeBar";
-import Launcher from "./features/Launcher";
+import Launcher from "./features/launcher/Launcher";
 import { buildWallpapers } from "../utils/wallpapers";
 import { useState, useEffect } from "react";
 
 const wallpapers = buildWallpapers()
 
 function Desktop() {
-    const [activeWallpaper, setActiveWallpaper] = useState(wallpapers[1].path)
+    const [activeWallpaper, setActiveWallpaper] = useState(wallpapers[71].path)
     const [desktopBg, setDesktopBg] = useState("black");
     const [activePanel, setActivePanel] = useState(null);
 
