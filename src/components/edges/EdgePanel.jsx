@@ -18,21 +18,42 @@ const cornersBySide = {
     left: ["top-left", "bottom-left"],
 };
 
+const oppositeSide = {
+    top: "bottom",
+    left: "right",
+    bottom: "top",
+    right: "left",
+}
+
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-function EdgePanel({ edge, featureName, isOpen, onClose, children }) {
+function EdgePanel({ edge, featureName, style, isOpen, onClose, children }) {
     const pinnedSide = edge.split("-")[0];
     const variants = slideVariants[pinnedSide];
     const corners = cornersBySide[pinnedSide];
     const paddingKey = `padding${capitalize(pinnedSide)}`;
-
+    const computedStyle = {
+        ...style,
+        [pinnedSide]: 0,
+    }
+    const freeSide = oppositeSide[pinnedSide];
+    const freeCorners = cornersBySide[freeSide];
+    freeCorners.forEach(corner => {
+        const camel = corner.split("-").map(capitalize).join("");
+        computedStyle[`border${camel}Radius`] = "24px";
+    })
+    
     return (
         <motion.div
             className={`edge-panel edge-panel-${featureName}`}
             layout
-            style={{ [paddingKey]: BUFFER + 20, [pinnedSide]: -BUFFER }}
+            style={{
+                ...computedStyle,
+                [paddingKey]: BUFFER + 20,
+                [pinnedSide]: -BUFFER
+            }}
             initial="hidden"
             animate={isOpen ? "visible" : "hidden"}
             variants={variants}
