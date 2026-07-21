@@ -1,0 +1,50 @@
+/* Container that centers or positions the bar */
+.launcher-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    bottom: var(--panel-buffer); /* Reads directly from EdgePanel! */
+    left: 0;
+    right: 0;
+    
+    /* Center horizontal layout cleanly */
+    width: 80%;
+    margin: 0 auto; 
+    
+    /* Calculate height to fit inside the visible panel area */
+    height: calc(100% - 80px); 
+    box-sizing: border-box;
+    
+    /* Optional: padding inside the visible panel so search input isn't flush with the edge */
+    padding: 16px; 
+    
+    border: 2px solid red; /* Debug border */
+}
+
+/* The outer pill / bar styling */
+.search-bar-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+    margin-right: 8px;
+    opacity: 0.6;
+}
+
+/* Clear default input borders so it blends into the form container */
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    color: #1f2937;
+}

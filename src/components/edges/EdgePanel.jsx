@@ -52,7 +52,8 @@ function EdgePanel({ edge, featureName, style, isOpen, onClose, children }) {
             style={{
                 ...computedStyle,
                 [paddingKey]: BUFFER + 20,
-                [pinnedSide]: -BUFFER
+                [pinnedSide]: -BUFFER,
+                "--panel-buffer": `${BUFFER}px`
             }}
             initial="hidden"
             animate={isOpen ? "visible" : "hidden"}

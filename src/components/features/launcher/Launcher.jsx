@@ -1,11 +1,15 @@
+import { useState } from "react";
 import EdgeTrigger from "../../edges/EdgeTrigger";
 import EdgePanel from "../../edges/EdgePanel";
-import SearchUtil from "./SearchUtil";
+import SearchBar from "./SearchBar";
 
 const EDGE = "bottom-edge";
 const FEATURE_NAME = "launcher";
 
+
 function Launcher({ activePanel, setActivePanel }) {
+    const [query, setQuery] = useState("")
+    const [selectedIndex, setSelectedIndex] = useState(0)
     const isOpen = activePanel === FEATURE_NAME;
 
     return (
@@ -18,11 +22,17 @@ function Launcher({ activePanel, setActivePanel }) {
             <EdgePanel
                 edge={EDGE}
                 featureName={FEATURE_NAME}
-                style={{ left: 0, right: 0, width: "60%", margin: "0 auto", height: "40vh" }}
+                style={{ left: 0, right: 0, width: "60%", margin: "0 auto", height: "50vh" }}
                 isOpen={isOpen}
                 onClose={() => setActivePanel(null)}
             >
-                <SearchUtil isOpen={isOpen} />
+                <div className="launcher-wrapper">
+                <SearchBar
+                    isOpen={isOpen}
+                    query={query}
+                    setQuery={setQuery}
+                    />
+                </div>
             </EdgePanel>
         </>
     );

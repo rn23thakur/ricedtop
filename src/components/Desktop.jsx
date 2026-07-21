@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 const wallpapers = buildWallpapers()
 
 function Desktop() {
-    const [activeWallpaper, setActiveWallpaper] = useState(wallpapers[71].path)
+    const [activeWallpaper, setActiveWallpaper] = useState(wallpapers[20].path)
     const [desktopBg, setDesktopBg] = useState("black");
     const [activePanel, setActivePanel] = useState(null);
 
