@@ -22,7 +22,7 @@ function Launcher({ activePanel, setActivePanel }) {
             <EdgePanel
                 edge={EDGE}
                 featureName={FEATURE_NAME}
-                style={{ left: 0, right: 0, width: "60%", margin: "0 auto", height: "50vh" }}
+                style={{ left: 0, right: 0, width: "40%", margin: "0 auto", height: "50vh" }}
                 isOpen={isOpen}
                 onClose={() => setActivePanel(null)}
             >

@@ -17,14 +17,14 @@ export default function SearchBar({ isOpen, query, setQuery }) {
         <>
             <form className="search-bar-form" onSubmit={(e) => e.preventDefault()}>
                 {/* Visual anchor / Icon placeholder */}
-                <span className="search-icon">🔍</span>
+                <img className="search-icon" src="public/search-svgrepo-com.svg" />
                 
                 {/* The Controlled Input */}
                 <input 
                     ref={inputRef}
                     type="text" 
                     className="search-input" 
-                    placeholder="Type to search..." 
+                    placeholder='Type ">" for commands'
                     value={query} 
                     onChange={(e) => setQuery(e.target.value)} 
                 />

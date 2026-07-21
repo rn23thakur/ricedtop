@@ -21,7 +21,7 @@ function Desktop() {
             }
         }
 
-        document.addEventListener("mouseout", handleMouseLeaveWindow);
+        document.addEventListener("mouseout", handleMouseLeaveWindow)
 
         return () => {
             document.removeEventListener("mouseout", handleMouseLeaveWindow);

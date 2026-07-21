@@ -1,9 +1,8 @@
 .edge-panel {
     position: absolute;
-    --panel-opacity: 95%;
+    --panel-opacity: 90%;
     background: color-mix(in srgb, var(--desktop-bg) var(--panel-opacity),transparent);
     z-index: 110;
     padding: 20px;
     box-sizing: border-box;
-    overflow: hidden;
 }

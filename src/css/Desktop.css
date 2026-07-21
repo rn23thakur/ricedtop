@@ -9,4 +9,6 @@
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    /* derive accent by rotating/saturating the same hue */
+    --accent: contrast-color(var(--desktop-bg));
 }
